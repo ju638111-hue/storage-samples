@@ -1,0 +1,101 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Flutter App'),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Welcome Text
+            Text(
+              'Welcome to My App!',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+
+            // Image Placeholder
+            Container(
+              height: 150,
+              decoration: BoxDecoration(
+                color: Colors.blue[50],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(
+                child: Icon(Icons.flutter_dash, size: 80, color: Colors.blue),
+              ),
+            ),
+            SizedBox(height: 30),
+
+            // Buttons
+            ElevatedButton.icon(
+              onPressed: () {
+                // Add Note action
+              },
+              icon: Icon(Icons.add),
+              label: Text('Add Note'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                textStyle: TextStyle(fontSize: 18),
+              ),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton.icon(
+              onPressed: () {
+                // View Notes action
+              },
+              icon: Icon(Icons.view_list),
+              label: Text('View Notes'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                textStyle: TextStyle(fontSize: 18),
+                backgroundColor: Colors.green,
+              ),
+            ),
+
+            SizedBox(height: 30),
+
+            // Example Card/List
+            Expanded(
+              child: ListView(
+                children: [
+                  Card(
+                    elevation: 3,
+                    margin: EdgeInsets.symmetric(vertical: 8),
+                    child: ListTile(
+                      leading: Icon(Icons.note),
+                      title: Text('Sample Note 1'),
+                      subtitle: Text('This is a description.'),
+                    ),
+                  ),
+                  Card(
+                    elevation: 3,
+                    margin: EdgeInsets.symmetric(vertical: 8),
+                    child: ListTile(
+                      leading: Icon(Icons.note),
+                      title: Text('Sample Note 2'),
+                      subtitle: Text('Another description here.'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
